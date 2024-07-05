@@ -33,14 +33,15 @@ else {
 
     // Sconto età
     let discounted_price
-
+    let sconto
 
     // SE hai meno di 18 anni 
     if (age < 18) {
 
         // Sconto del 20%
-        discounted_price = (full_price * 20) / 100
-        discounted_price = discounted_price.toFixed(2)
+        sconto = (full_price * 20) / 100
+        sconto = sconto.toFixed(2)
+        discounted_price = full_price - sconto
         console.log('Prezzo scontato ' + discounted_price + '€')
         prezzo = document.getElementById("prezzo").innerHTML = 'Prezzo finale ' + discounted_price + '€'; // stampare su html il risultato
     }
@@ -49,8 +50,9 @@ else {
     else if (age > 65) {
 
         // Sconto del 40%
-        discounted_price = (full_price * 40) / 100
-        discounted_price = discounted_price.toFixed(2)
+        sconto = (full_price * 40) / 100
+        sconto = sconto.toFixed(2)
+        discounted_price = full_price - sconto
         console.log('Prezzo scontato ' + discounted_price + '€')
         prezzo = document.getElementById("prezzo").innerHTML = 'Prezzo finale ' + discounted_price + '€';
 

@@ -5,7 +5,7 @@
 // va applicato uno sconto del 40% per gli over 65.
 // Stampate il prezzo del biglietto in console, ma l’output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo e questo richiederà un minimo di ricerca.).
 
-
+let prezzo
 
 // Input utente
 let km = prompt("Inserisci chilometri da percorrere")
@@ -42,7 +42,7 @@ else {
         discounted_price = (full_price * 20) / 100
         discounted_price = discounted_price.toFixed(2)
         console.log('Prezzo scontato ' + discounted_price + '€')
-
+        prezzo = document.getElementById("prezzo").innerHTML = 'Prezzo finale ' + discounted_price + '€'; // stampare su html il risultato
     }
 
     // SE hai più di 65 anni 
@@ -52,12 +52,14 @@ else {
         discounted_price = (full_price * 40) / 100
         discounted_price = discounted_price.toFixed(2)
         console.log('Prezzo scontato ' + discounted_price + '€')
+        prezzo = document.getElementById("prezzo").innerHTML = 'Prezzo finale ' + discounted_price + '€';
 
     }
 
     // ALTRIMENTI paga prezzo pieno
     else {
         console.log('Prezzo finale ' + full_price + '€')
+        prezzo = document.getElementById("prezzo").innerHTML = 'Prezzo finale ' + full_price + '€';
     }
 }
 
